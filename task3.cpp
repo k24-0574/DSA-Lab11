@@ -36,14 +36,18 @@ class HashTable{
     }
 
     void deleteKey(int key){
-        // int index = hashFunction(key);
-        // table[index].erase()
-        // for(auto &p:table[index]){
-        //     if(p.first==key){
-                
-        //     }
-        // }
+    int index = hashFunction(key);
+
+    for (auto it = table[index].begin(); it != table[index].end(); ++it) {
+        if (it->first == key) {
+            table[index].erase(it);
+            cout<<"Key "<<key<<" deleted"<<endl;
+            return;
+        }
     }
+    cout<<"Key "<<key<<" not found"<<endl;
+}
+
 
     void Display(){
         for(int i=0;i<TableSize;i++){
@@ -69,6 +73,7 @@ int main(){
     myhash.search(2);
     myhash.search(7);
 
+    myhash.deleteKey(8);
 
     myhash.Display();
 
