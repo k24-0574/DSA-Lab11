@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-const int TableSize = 7; //make table size large for many strings
+const int TableSize = 7; //make table size large (greater than 7) for many strings
 struct Node{
     string key;
     string value;
